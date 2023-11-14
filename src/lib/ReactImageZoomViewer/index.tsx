@@ -135,6 +135,10 @@ function ReactImageZoomViewer({ children }: Props) {
     <>
       {cloneElement(img, {
         onClick: handleClick,
+        style: {
+          cursor: 'zoom-in',
+          ...img.props.style,
+        },
       })}
       {isCloneElementVisible && (
         <RIZVProtal>
@@ -148,6 +152,7 @@ function ReactImageZoomViewer({ children }: Props) {
               background: '#fff',
               transition: 'all 0.3s',
               opacity: backgroundOpacity,
+              cursor: 'zoom-out',
             }}
           />
           <img
@@ -156,6 +161,7 @@ function ReactImageZoomViewer({ children }: Props) {
             style={{
               position: 'fixed',
               transition: 'all 0.3s',
+              pointerEvents: 'none',
               ...cloneElementStyle,
             }}
           />
