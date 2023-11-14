@@ -51,6 +51,8 @@ function ReactImageZoomViewer({ children }: Props) {
     height: 0,
   })
 
+  const [backgroundOpacity, setBackgroundOpacity] = useState(0)
+
   function handleClick(e: MouseEvent<HTMLImageElement>) {
     img.props?.onClick?.(e)
 
@@ -98,6 +100,8 @@ function ReactImageZoomViewer({ children }: Props) {
       width: toWidth,
       height: toHeight,
     })
+
+    setBackgroundOpacity(1)
   }
 
   function getNaturalSize(src: string) {
@@ -134,6 +138,18 @@ function ReactImageZoomViewer({ children }: Props) {
       })}
       {isCloneElementVisible && (
         <RIZVProtal>
+          <div
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: '#fff',
+              transition: 'all 0.3s',
+              opacity: backgroundOpacity,
+            }}
+          />
           <img
             src={img.props.src}
             alt=''
