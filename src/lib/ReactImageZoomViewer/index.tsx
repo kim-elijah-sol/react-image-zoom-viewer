@@ -119,6 +119,14 @@ function ReactImageZoomViewer({ children }: Props) {
     image.src = src
   }
 
+  function handleClickBackground() {
+    setBackgroundOpacity(0)
+    setCloneElementStyle($originalStyle.current)
+    setTimeout(() => {
+      setIsCloneElementVisible(false)
+    }, 310)
+  }
+
   useEffect(() => {
     getNaturalSize(src)
   }, [src])
@@ -143,6 +151,7 @@ function ReactImageZoomViewer({ children }: Props) {
       {isCloneElementVisible && (
         <RIZVProtal>
           <div
+            onClick={handleClickBackground}
             style={{
               position: 'fixed',
               top: 0,
