@@ -139,6 +139,16 @@ function ReactImageZoomViewer({ children }: Props) {
     }
   }, [isCloneElementVisible])
 
+  useEffect(() => {
+    if (isCloneElementVisible) {
+      window.addEventListener('resize', handleClickBackground)
+
+      return () => {
+        window.removeEventListener('resize', handleClickBackground)
+      }
+    }
+  }, [isCloneElementVisible])
+
   return (
     <>
       {cloneElement(img, {
