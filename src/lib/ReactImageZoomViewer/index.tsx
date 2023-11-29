@@ -119,7 +119,7 @@ function ReactImageZoomViewer({ children }: Props) {
     image.src = src
   }
 
-  function handleClickBackground() {
+  function resetStyle() {
     setBackgroundOpacity(0)
     setCloneElementStyle($originalStyle.current)
     setTimeout(() => {
@@ -141,10 +141,10 @@ function ReactImageZoomViewer({ children }: Props) {
 
   useEffect(() => {
     if (isCloneElementVisible) {
-      window.addEventListener('resize', handleClickBackground)
+      window.addEventListener('resize', resetStyle)
 
       return () => {
-        window.removeEventListener('resize', handleClickBackground)
+        window.removeEventListener('resize', resetStyle)
       }
     }
   }, [isCloneElementVisible])
@@ -161,7 +161,7 @@ function ReactImageZoomViewer({ children }: Props) {
       {isCloneElementVisible && (
         <RIZVProtal>
           <div
-            onClick={handleClickBackground}
+            onClick={resetStyle}
             style={{
               position: 'fixed',
               top: 0,
