@@ -1,7 +1,22 @@
 {
   "name": "react-image-zoom-viewer",
-  "version": "0.1.0",
-  "private": true,
+  "description": "React Image Zoom Viewer",
+  "keywords": [
+    "react",
+    "image",
+    "zoom",
+    "viewer"
+  ],
+  "author": {
+    "name": "kim-elijah-sol",
+    "email": "kimelijahsol@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kim-elijah-sol/react-image-zoom-viewer.git"
+  },
+  "version": "0.0.1",
+  "private": false,
   "dependencies": {
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
@@ -15,7 +30,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "rm -rf dist && mkdir dist && tsc"
   },
   "eslintConfig": {
     "extends": [
