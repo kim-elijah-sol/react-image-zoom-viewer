@@ -7,6 +7,9 @@
     "zoom",
     "viewer"
   ],
+  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": {
     "name": "kim-elijah-sol",
     "email": "kimelijahsol@gmail.com"
@@ -15,7 +18,7 @@
     "type": "git",
     "url": "git://github.com/kim-elijah-sol/react-image-zoom-viewer.git"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "dependencies": {
     "@types/node": "^16.7.13",
