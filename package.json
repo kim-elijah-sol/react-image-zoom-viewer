@@ -18,7 +18,7 @@
     "type": "git",
     "url": "git://github.com/kim-elijah-sol/react-image-zoom-viewer.git"
   },
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": false,
   "dependencies": {
     "@types/node": "^16.7.13",
